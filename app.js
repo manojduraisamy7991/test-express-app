@@ -4,7 +4,18 @@ const app = express()
 const PORT = 8000
 
 app.get('/', (req, res) => {
-  res.send('Hello World')
+  const responseData = {
+    message: 'Hello World',
+    status: 'success',
+    data: {
+      userId: 1,
+      username: 'john_doe',
+      email: 'john.doe@example.com'
+    }
+  };
+
+  // Send the JSON response
+  res.json(responseData);
 })
 
 app.get('/about', (req, res) => {
